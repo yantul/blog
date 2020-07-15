@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Cover />
     <div id="nav">
       <router-link to="/">Index</router-link> |
       <router-link to="/about">About</router-link>
@@ -7,6 +8,17 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+import Cover from '@/components/Cover.vue'
+
+export default {
+  components: {
+    Cover
+  }
+}
+
+</script>
 
 <style lang="scss">
 #app {
