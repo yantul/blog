@@ -1,21 +1,29 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Index from '../views/Index.vue'
+import Framework from '../views/Framework.vue'
+import IndexPage from '../views/Index.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Index',
-    component: Index
+    component: Framework,
+    children: [
+      { path: '/', redirect: 'index' },
+      { path: 'index', component: IndexPage },
+      { path: 'tags/:tag', component: () => import('../views/Tags.vue') },
+      { path: 'archives/:view', component: () => import('../views/Archives.vue') }
+    ]
+  },
+  {
+    path: '/details/:id',
+    name: 'Details',
+    component: () => import('../views/Details.vue')
   },
   {
     path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    name: '关于',
     component: () => import('../views/About.vue')
   }
 ]

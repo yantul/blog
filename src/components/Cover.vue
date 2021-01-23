@@ -1,6 +1,6 @@
 <template>
   <div :style="{ height: fullHeight + 'px', color: bgcolor }" class="cover">
-123213
+
   </div>
 </template>
 
@@ -33,7 +33,7 @@ export default {
 <style lang="scss">
   .cover{
     width: 100%;
-    background: red;
+    background: rgb(99, 85, 85);
     display: block;
   }
 </style>

@@ -1,20 +1,22 @@
 <template>
   <div id="app">
-    <Cover />
-    <div id="nav">
-      <router-link to="/">Index</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <Nav />
+    <DynamicBg />
     <router-view/>
+    <Footer />
   </div>
 </template>
 
 <script>
-import Cover from '@/components/Cover.vue'
+import Nav from '@/components/Nav.vue'
+import Footer from '@/components/Footer.vue'
+import DynamicBg from '@/components/DynamicBg.vue'
 
 export default {
   components: {
-    Cover
+    Nav,
+    Footer,
+    DynamicBg
   }
 }
 
@@ -27,18 +29,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
