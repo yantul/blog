@@ -1,5 +1,5 @@
 <template>
-  <div class="a-arch">asda</div>
+  <div class="a-arch">123456</div>
 </template>
 
 <script>
