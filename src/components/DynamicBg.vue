@@ -1,5 +1,5 @@
 <template>
-  <div class="dynamic-bg" v-if="showDBG">
+  <div class="dynamic-bg"  v-if="this.$store.state.showDBG">
     <!-- <div class="thumb">
     </div> -->
     <div class="trans"></div>
@@ -7,18 +7,11 @@
 </template>
 
 <script>
-import contain from '../util/ArrayUtil'
 export default {
   name: 'DynamicBg',
   data: function () {
     return {
       showDBG: true
-    }
-  },
-  watch: {
-    $route (to, from) {
-      this.showDBG = !contain(to.path.split('/'), 'details')
-      console.log(to.path)
     }
   }
 }

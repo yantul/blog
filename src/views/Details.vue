@@ -13,7 +13,15 @@
 
 <script>
 export default {
-  name: 'Details'
+  name: 'Details',
+  mounted: function () {
+    this.$store.commit('disableDBG')
+    this.$store.commit('disableFooter')
+  },
+  destroyed: function () {
+    this.$store.commit('enableDBG')
+    this.$store.commit('enableFooter')
+  }
 }
 </script>
 

@@ -1,23 +1,10 @@
 <template>
-  <div class="footer" v-if="showDBG">Footer</div>
+  <div class="footer" v-if="this.$store.state.showFooter">Footer</div>
 </template>
 
 <script>
-import contain from '../util/ArrayUtil'
-
 export default {
-  name: 'Footer',
-  data: function () {
-    return {
-      showDBG: true
-    }
-  },
-  watch: {
-    $route (to, from) {
-      this.showDBG = !contain(to.path.split('/'), 'details')
-      console.log(to.path)
-    }
-  }
+  name: 'Footer'
 }
 </script>
 

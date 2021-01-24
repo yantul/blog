@@ -24,7 +24,6 @@ export default {
     handleReasize (event) {
       this.fullWidth = document.documentElement.clientWidth
       this.fullHeight = document.documentElement.clientHeight
-      console.log(this.fullHeight)
     }
   }
 }

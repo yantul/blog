@@ -54,7 +54,7 @@ export default {
 
   .img-wrap{
     height: 100%;
-    background-color: violet;
+    // background-color: violet;
     display: flex;
     flex-basis: 170px;
 

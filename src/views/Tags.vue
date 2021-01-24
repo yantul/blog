@@ -53,7 +53,8 @@ export default {
   }
 
   .selected-tag, .recommend-tag{
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+    padding-top: 10px;
   }
 }
 </style>

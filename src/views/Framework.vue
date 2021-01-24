@@ -3,7 +3,7 @@
     <div class="wrap">
       <div class="main">
         <div class="left-pan">
-          <router-view />
+            <router-view/>
         </div>
         <div class="right-pan">
           <PageCard :cards="tag"/>

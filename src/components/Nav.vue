@@ -1,14 +1,14 @@
 <template>
-  <div ref="nav" v-bind:class="[ isActive ? activeClass : nonActiveClass ]"  class="nav" @click.stop="navClick($event)">
+  <div v-if="this.$store.state.showNav" ref="nav" v-bind:class="[ isActive ? activeClass : nonActiveClass ]"  class="nav" @click.stop="navClick($event)">
       <div class="nav-header">
           <div class="nav-link">
                <ul>
                 <li><router-link to="/">主站</router-link></li>
                 <li><router-link to="/archives/list">归档</router-link></li>
-                <li>资源</li>
-                <li>时间轴</li>
+                <li>资源{{ this.$store.state.screenWidth }}</li>
+                <li>时间轴{{ this.$store.state.screenHeight }}</li>
                 <li><router-link to="/tags/c" >标签</router-link></li>
-                <li>模板</li>
+                <li><router-link to="/editor" >编辑</router-link></li>
                 <li><router-link to="/about">关于</router-link></li>
                </ul>
           </div>
@@ -72,7 +72,7 @@ export default {
         height: 66px;
         background-color: transparent;
         min-width: 1020px;
-        z-index: 999;
+        z-index: 9999;
         transition: left .5s, background-color .5s;
         user-select: none;
 

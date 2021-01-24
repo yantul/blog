@@ -17,6 +17,11 @@ const routes = [
     ]
   },
   {
+    path: '/editor',
+    name: 'MDEditor',
+    component: () => import('../views/Editor.vue')
+  },
+  {
     path: '/details/:id',
     name: 'Details',
     component: () => import('../views/Details.vue')

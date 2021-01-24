@@ -2,7 +2,9 @@
   <div id="app">
     <Nav />
     <DynamicBg />
-    <router-view/>
+    <keep-alive include="MDEditor">
+      <router-view/>
+    </keep-alive>
     <Footer />
   </div>
 </template>
@@ -17,6 +19,41 @@ export default {
     Nav,
     Footer,
     DynamicBg
+  },
+  data: function () {
+    return {
+      screenWidth: 0,
+      screenHeight: 0
+    }
+  },
+  mounted () {
+    const that = this
+    that.screenWidth = document.documentElement.clientWidth
+    that.screenHeight = document.documentElement.clientHeight
+    window.onresize = () => {
+      return (() => {
+        that.screenWidth = document.documentElement.clientWidth
+        that.screenHeight = document.documentElement.clientHeight
+      })()
+    }
+  },
+  watch: {
+    screenWidth (val) {
+      const that = this
+      setTimeout(function () {
+        that.$store.commit('modifyScreenWidth', {
+          screenWidth: that.screenWidth
+        })
+      }, 400)
+    },
+    screenHeight (val) {
+      const that = this
+      setTimeout(function () {
+        that.$store.commit('modifyScreenHeight', {
+          screenHeight: that.screenHeight
+        })
+      }, 400)
+    }
   }
 }
 
