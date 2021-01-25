@@ -1,4 +1,4 @@
-function contain (arry, val) {
+export default function contain (arry, val) {
   for (let index = 0; index < arry.length; index++) {
     if (arry[index] === val) {
       return true
@@ -7,4 +7,6 @@ function contain (arry, val) {
   return false
 }
 
-export default contain
+export function scrollTop () {
+  return document.documentElement.scrollTop || document.body.srcollTop
+}

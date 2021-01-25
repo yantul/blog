@@ -8,7 +8,8 @@ const state = {
   showDBG: true,
   showFooter: true,
   screenWidth: 0,
-  screenHeight: 0
+  screenHeight: 0,
+  scrollTop: 0
 }
 
 const mutations = {
@@ -39,6 +40,10 @@ const mutations = {
   },
   modifyScreenHeight (state, payload) {
     state.screenHeight = payload.screenHeight
+  },
+  // scrollTop 相关
+  modifyScrollTop (state, payload) {
+    state.scrollTop = payload.scrollTop
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="details">
+  <div class="details" :style="{ height: (this.$store.state.screenHeight - 0) + 'px' }">
       <div class="main-wrap">
           <div class="prev-area">
               <h1>HAhahs哈哈的哈哈苏打水</h1>
@@ -28,13 +28,13 @@ export default {
 <style lang="scss">
 .details{
     width: 100%;
-    // background-color: turquoise;
     overflow: auto;
-    margin-top: 80px;
+    padding-top: 80px;
+    box-sizing: border-box;
 
     .main-wrap{
         width: 1200px;
-        height: 900px;
+        height: 700px;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;

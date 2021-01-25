@@ -13,6 +13,7 @@
 import Nav from '@/components/Nav.vue'
 import Footer from '@/components/Footer.vue'
 import DynamicBg from '@/components/DynamicBg.vue'
+import { scrollTop } from './util/ArrayUtil'
 
 export default {
   components: {
@@ -23,7 +24,8 @@ export default {
   data: function () {
     return {
       screenWidth: 0,
-      screenHeight: 0
+      screenHeight: 0,
+      scrollTopVal: 0
     }
   },
   mounted () {
@@ -34,6 +36,11 @@ export default {
       return (() => {
         that.screenWidth = document.documentElement.clientWidth
         that.screenHeight = document.documentElement.clientHeight
+      })()
+    }
+    window.onscroll = () => {
+      return (() => {
+        that.scrollTopVal = scrollTop()
       })()
     }
   },
@@ -53,6 +60,11 @@ export default {
           screenHeight: that.screenHeight
         })
       }, 400)
+    },
+    scrollTopVal (val) {
+      this.$store.commit('modifyScrollTop', {
+        scrollTop: this.scrollTopVal
+      })
     }
   }
 }

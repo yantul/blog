@@ -5,8 +5,7 @@
                <ul>
                 <li><router-link to="/">主站</router-link></li>
                 <li><router-link to="/archives/list">归档</router-link></li>
-                <li>资源{{ this.$store.state.screenWidth }}</li>
-                <li>时间轴{{ this.$store.state.screenHeight }}</li>
+                <li>资源</li>
                 <li><router-link to="/tags/c" >标签</router-link></li>
                 <li><router-link to="/editor" >编辑</router-link></li>
                 <li><router-link to="/about">关于</router-link></li>
@@ -162,7 +161,7 @@ export default {
                     display: flex;
                     align-items: center;
                     &>li{
-                        margin-right: 15px;
+                        margin-right: 25px;
                         cursor: pointer;
                     }
                 }
