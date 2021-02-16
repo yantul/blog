@@ -1,14 +1,16 @@
 <template>
-  <div v-if="this.$store.state.showNav" ref="nav" v-bind:class="[ isActive ? activeClass : nonActiveClass ]"  class="nav" @click.stop="navClick($event)">
+  <div v-if="this.$store.state.showNav" ref="nav"
+   :class="[ isActive ? activeClass : nonActiveClass ]"  class="nav" @click.stop="navClick($event)"
+   :style="{ background: this.$store.state.scrollTop > 90  ? '#fff' : 'transparent' , 'box-shadow':  this.$store.state.scrollTop > 90 &&  !this.$store.state.isMobile ? '5px -4px 7px rgb(0, 0, 0)' : 'none'}">
       <div class="nav-header">
           <div class="nav-link">
                <ul>
-                <li><router-link to="/">主站</router-link></li>
-                <li><router-link to="/archives/list">归档</router-link></li>
-                <li>资源</li>
-                <li><router-link to="/tags/c" >标签</router-link></li>
-                <li><router-link to="/editor" >编辑</router-link></li>
-                <li><router-link to="/about">关于</router-link></li>
+                <li><router-link to="/"><i class="fa fa-home" aria-hidden="true"></i>主站</router-link></li>
+                <li><router-link to="/archives/list"><i class="fa fa-archive" aria-hidden="true"></i>归档</router-link></li>
+                <li><router-link to="/tags/c" ><i class="fa fa-tag" aria-hidden="true"></i>标签</router-link></li>
+                <li><i class="fa fa-envira" aria-hidden="true"></i>工具</li>
+                <li><router-link to="/editor" ><i class="fa fa-ravelry" aria-hidden="true"></i>编辑</router-link></li>
+                <li><router-link to="/about"><i class="fa fa-snowflake-o" aria-hidden="true"></i>关于</router-link></li>
                </ul>
           </div>
           <div class="nav-search">
@@ -17,7 +19,7 @@
           </div>
           <div class="nav-user">
               <ul>
-                <li>BW</li>
+                <li>其它</li>
                 <li>登录</li>
                </ul>
           </div>
@@ -74,6 +76,28 @@ export default {
         z-index: 9999;
         transition: left .5s, background-color .5s;
         user-select: none;
+        color:#673b3b;
+
+        & a{
+          color: inherit;
+          text-decoration: none;
+
+          &:link{
+            color: inherit;
+          }
+
+          &:active{
+            color:inherit;
+          }
+
+          &:hover .fa-home{
+            animation: index .3s;
+          }
+
+          &:hover .fa-snowflake-o{
+            animation: spin .3s;
+          }
+        }
 
         .mobile-nav{
           & i, & i::before{
@@ -148,6 +172,10 @@ export default {
             box-sizing: border-box;
             font-size: 16px;
 
+            & li i{
+              margin-right: 5px;
+            }
+
             &>.nav-link, .nav-search, .nav-user{
                 position: relative;
                 display: flex;
@@ -193,5 +221,38 @@ export default {
 
     .non-trans-bg{
       background-color: rgba(105,90,90,.85);
+    }
+
+    @keyframes index {
+      0% {
+        transform: translate(0, 0);
+      }
+      30% {
+        transform: translate(0, 5px);
+      }
+      60% {
+        transform: translate(0, -5px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(180deg);
+      }
+    }
+
+    .navStateA{
+      box-shadow: 5px -4px 7px rgb(0, 0, 0);
+      background-color: #fff;
+    }
+
+    .navStateN{
+      background-color: transparent;
     }
 </style>

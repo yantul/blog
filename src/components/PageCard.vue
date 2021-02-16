@@ -1,10 +1,10 @@
 <template>
   <div class="page-card" :style="{ height: cardHeight }">
-      <div class="card-header" :style="{ backgroundColor: headBackground }">
+      <div ref="card_header" class="card-header" :style="{ backgroundColor: headBackground }">
           <ul>
-              <li v-for="(item, index) in cards" :key="item.header" @mouseenter="enter(index, $event)" @click="itemClick(index)">{{ item.header }}</li>
+              <li v-for="(item, index) in cards" :key="item.header" @click="itemClick(index, $event)">{{ item.header }}</li>
           </ul>
-          <div v-if="cards.length > 1" ref="scrollblock" :style="{ left: offsetLeft + 'px', width: offsetWidth + 'px' }" class="scroll-block"></div>
+          <div v-if="showScrollBar || cards.length > 1" ref="scrollblock" :style="{ left: offsetLeft + 'px', width: offsetWidth + 'px' }" class="scroll-block"></div>
       </div>
       <div class="card-body">
           <ul>
@@ -23,12 +23,6 @@ export default {
   name: 'PageCard',
   data: function () {
     return {
-      // cards: [
-      //   { header: '首页', content: '<del>sdsdsd</del>' },
-      //   { header: 'ei', content: 'fuck' },
-      //   { header: 'gaga', content: 'nimei' },
-      //   { header: '首页NIMEI', content: '5555' }
-      // ],
       offsetLeft: 8,
       offsetWidth: 56,
       checked: 0
@@ -49,12 +43,19 @@ export default {
     },
     bodyBackground: {
       type: String,
-      default: '#d2c0c0'
+      default: '#fff'
     },
     headBackground: {
       type: String,
       default: '#fff'
+    },
+    showScrollBar: {
+      type: Boolean,
+      default: false
     }
+  },
+  mounted () {
+    this.offsetWidth = this.$refs.card_header.children[0].children[0].offsetWidth + 14
   },
   methods: {
     enter (index, event) {
@@ -63,7 +64,8 @@ export default {
       this.offsetLeft = event.toElement.offsetLeft - 6
       // console.log(event)
     },
-    itemClick (index) {
+    itemClick (index, event) {
+      this.enter(index, event)
       this.checked = index
     }
   }

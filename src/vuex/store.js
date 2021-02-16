@@ -9,7 +9,9 @@ const state = {
   showFooter: true,
   screenWidth: 0,
   screenHeight: 0,
-  scrollTop: 0
+  scrollTop: 0,
+  isMobile: false,
+  scrollDirection: 0 // 1：top， -1: down, 0: stop
 }
 
 const mutations = {
@@ -44,6 +46,14 @@ const mutations = {
   // scrollTop 相关
   modifyScrollTop (state, payload) {
     state.scrollTop = payload.scrollTop
+  },
+  // 判断是否为手机端
+  browserType (state, payload) {
+    state.isMobile = payload.isMobile
+  },
+  // 判断网页滚动方向
+  modifyScrollDirection (state, payload) {
+    state.scrollDirection = payload.scrollDirection
   }
 }
 

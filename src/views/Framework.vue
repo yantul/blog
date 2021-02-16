@@ -6,8 +6,8 @@
             <router-view/>
         </div>
         <div class="right-pan">
+          <PageCard :showScrollBar="true"/>
           <PageCard :cards="tag"/>
-          <PageCard />
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@ export default {
   data: function () {
     return {
       tag: [
-        { header: '标签', content: '<a href="/tags" class>C#</a>' },
+        { header: '默认卡片QWE', content: '<a href="/tags" class>C#</a>' },
         { header: '标签2', content: '标签二' }
       ]
     }
@@ -36,18 +36,17 @@ export default {
 <style lang="scss">
 .index{
   width: 100%;
-  // background-color: #e6e6e6;
   padding-bottom: 200px;
 
   .wrap{
     width: 100%;
-    background-color: #e6e6e6;
+    background-color: #f4f5f5;
 
     .main{
       width: 95%;
       height: calc(100% - 100px);
       margin: 0 auto;
-      // background-color: bisque;
+      padding-bottom: 20px;
 
       .left-pan{
         display: inline-block;

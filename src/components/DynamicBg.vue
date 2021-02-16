@@ -23,7 +23,7 @@ export default {
     width: 100%;
     height: 160px;
     min-height: 66px;
-    background-color: #e6e6e6;
+    background-color: #f4f5f5;
 
     .thumb{
       height: 400px;

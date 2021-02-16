@@ -3,13 +3,13 @@
       <div class="img-wrap"><img src="" title="未知图片..." /></div>
       <div class="content-wrap">
         <h3>测试</h3>
-        <p>background-size指定背景图像的大小。CSS3以前，背景图像大小由图像的实际大小决定。
+        <p>1{{ this.$store.state.isMobile }}background-size指定背景图像的大小。CSS3以前，背景图像大小由图像的实际大小决定。
 
 CSS3中可以指定背景图片，让我们重新在不同的环境中指定背景图片的大小。您可以指定像素或百分比大小。
 
 你指定的大小是相对于父元素的宽度和高度的百分比的大小。</p>
       </div>
-      <div class="info-layer" :class="{ open: hover }" >
+      <div class="info-layer" :class="[ !this.$store.state.isMobile && hover ? 'open' : '']" >
         <div class="pic-mask"></div>
         <div class="more-mask">
           <span>
@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss">
 .a-card{
-  width: calc(97% / 3);
+  width: calc(96% / 3);
   height: 140px;
   background-color: rgb(252, 249, 249);
   float: left;

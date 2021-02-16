@@ -29,7 +29,7 @@
    }
 }
 
-@media screen and (max-width: 395px) {
+@media screen and (max-width: 400px) {
 
     /* index */
     body{
@@ -105,5 +105,14 @@
 
    .img-wrap{
     height: 140px!important;
+   }
+
+   .pic-mask{
+       display: none;
+   }
+
+   .info-layer{
+       position: static!important;
+       height: 38px!important;
    }
 }

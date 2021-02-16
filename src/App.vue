@@ -25,7 +25,8 @@ export default {
     return {
       screenWidth: 0,
       screenHeight: 0,
-      scrollTopVal: 0
+      scrollTopVal: 0,
+      oldScrollVal: 0
     }
   },
   mounted () {
@@ -51,7 +52,12 @@ export default {
         that.$store.commit('modifyScreenWidth', {
           screenWidth: that.screenWidth
         })
-      }, 400)
+        if (that.screenWidth <= 400) {
+          that.$store.commit('browserType', {
+            isMobile: true
+          })
+        }
+      }, 500)
     },
     screenHeight (val) {
       const that = this
@@ -62,9 +68,22 @@ export default {
       }, 400)
     },
     scrollTopVal (val) {
-      this.$store.commit('modifyScrollTop', {
-        scrollTop: this.scrollTopVal
+      const that = this
+      that.$store.commit('modifyScrollTop', {
+        scrollTop: that.scrollTopVal
       })
+      setTimeout(function () {
+        let DIRECTION = 0
+        if (that.scrollTopVal - that.oldScrollVal > 0) {
+          DIRECTION = -1
+        } else if (that.scrollTopVal - that.oldScrollVal < 0) {
+          DIRECTION = 1
+        }
+        that.oldScrollVal = that.scrollTopVal
+        that.$store.commit('modifyScrollDirection', {
+          scrollDirection: DIRECTION
+        })
+      }, 500)
     }
   }
 }
