@@ -1,5 +1,5 @@
 @media screen and (max-width: 1666px) {
-    .a-card{
+    /* .a-card{
     width: 49.5%!important;
     }
 
@@ -9,7 +9,7 @@
 
     .a-card:nth-child(odd){
     margin: 0 0 8px 0;
-    }
+    } */
 }
 
 @media screen and (max-width: 1200px) {

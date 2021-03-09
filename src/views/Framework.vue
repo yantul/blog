@@ -6,8 +6,8 @@
             <router-view/>
         </div>
         <div class="right-pan">
-          <PageCard :showScrollBar="true"/>
-          <PageCard :cards="tag"/>
+          <PageCard :showScrollBar="true" headBackground="#f4f5f5"/>
+          <PageCard :cards="tag" headBackground="#f4f5f5"/>
         </div>
       </div>
     </div>

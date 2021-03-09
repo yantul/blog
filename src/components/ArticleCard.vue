@@ -1,8 +1,11 @@
 <template>
-    <div class="a-card" @mouseover="hover = true" @mouseleave="hover = false">
-      <div class="img-wrap"><img src="" title="未知图片..." /></div>
+    <!-- <div class="a-card" @mouseover="hover = true" @mouseleave="hover = false"> -->
+    <div class="a-card">
+      <div class="img-wrap">
+        <div class="img-cover"></div>
+      </div>
       <div class="content-wrap">
-        <h3>测试</h3>
+        <h3>测试background-size指定背景图像的大小</h3>
         <p>1{{ this.$store.state.isMobile }}background-size指定背景图像的大小。CSS3以前，背景图像大小由图像的实际大小决定。
 
 CSS3中可以指定背景图片，让我们重新在不同的环境中指定背景图片的大小。您可以指定像素或百分比大小。
@@ -39,52 +42,70 @@ export default {
 
 <style lang="scss">
 .a-card{
-  width: calc(96% / 3);
-  height: 140px;
+  width: calc(98% / 1);
+  height: 270px;
   background-color: rgb(252, 249, 249);
   float: left;
-  margin: 2px 7px 6px 7px;
+  margin: 12px 5px 12px 5px;
   box-sizing: border-box;
   border-radius: 2px;
   overflow: hidden;
   position: relative;
   display: flex;
   justify-content:space-between;
-  box-shadow: 3px -2px 6px 0px #00000069;
+  // box-shadow: 3px -2px 6px 0px #00000069;
+
+  &:hover .img-cover{
+    transform: scale(1.12);
+  }
 
   .img-wrap{
     height: 100%;
     // background-color: violet;
     display: flex;
-    flex-basis: 170px;
+    flex-basis: 250px;
+    overflow: hidden;
 
-    &>img{
+    &>.img-cover{
       width: 100%;
       height: 100%;
+      background-image: url("https://img.iplaysoft.com/wp-content/uploads/2019/free-images/free_stock_photo.jpg!0x0.webp");
+      background-size: cover;
+      background-position: center;
+      transition: transform .5s;
     }
   }
 
   .content-wrap{
     flex: 1;
     box-sizing: border-box;
-    padding: 0 7px 5px 7px;
+    padding: 0 7px 5px 40px;
     text-align: left;
 
     h3{
       margin-top: 7px;
       margin-bottom: 12px;
+      font-size: 30px;
+      word-break: break-all;
+      -webkit-line-clamp: 1;
+      overflow-wrap: break-word;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      -webkit-box-orient:vertical;
     }
 
     p{
       word-break: break-all;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 4;
       overflow-wrap: break-word;
       text-overflow: ellipsis;
       overflow: hidden;
       display: -webkit-box;
       -webkit-box-orient:vertical;
       margin-bottom: 8px;
-      line-height: 20px;
+      line-height: 30px;
+      font-size: 20px;
+      color: #4a4848e0;
     }
   }
 
@@ -99,7 +120,7 @@ export default {
     justify-content: space-between;
 
     .pic-mask{
-      flex-basis: 170px;
+      flex-basis: 250px;
       height: 100%;
     }
 
