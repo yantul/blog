@@ -1,4 +1,4 @@
-var musicList = [
+[
     {
         "name": "Frame Of Reference",
         "artist": "Drug Store Romeos",
@@ -21,4 +21,4 @@ var musicList = [
         "lrc": "lrc.lrc",
         "theme": "#ebd0c2"
     }
-    ];
+    ]
