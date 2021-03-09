@@ -1,22 +1,24 @@
-var musicList = [{
-        name: 'Frame Of Reference',
-        artist: 'Drug Store Romeos',
-        url: 'https://music.163.com/song/media/outer/url?id=1422358138.mp3',
-        cover: 'https://p2.music.126.net/zis0cqSrZmHmAiObahMj4g==/109951164695470863.jpg?param=130y130',
-        lrc: '',
-        theme: '#ebd0c2'
+var musicList = [
+    {
+        'name': 'Frame Of Reference',
+        'artist': 'Drug Store Romeos',
+        'url': 'https://music.163.com/song/media/outer/url?id=1422358138.mp3',
+        'cover': 'https://p2.music.126.net/zis0cqSrZmHmAiObahMj4g==/109951164695470863.jpg?param=130y130',
+        'lrc': '',
+        'theme': '#ebd0c2'
     },{
-        name: 'SA MAU KOI - TOJANA - (CYTA WALONE COVER)',
-        artist: '',
-        url: 'https://music.163.com/song/media/outer/url?id=1817233369.mp3',
-        cover: 'https://p2.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg?param=130y130',
-        lrc: 'lrc.lrc',
-        theme: '#ebd0c2'
+        'name': 'SA MAU KOI - TOJANA - (CYTA WALONE COVER)',
+        'artist': '',
+        'url': 'https://music.163.com/song/media/outer/url?id=1817233369.mp3',
+        'cover': 'https://p2.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg?param=130y130',
+        'lrc': 'lrc.lrc',
+        'theme': '#ebd0c2'
     },{
-        name: 'my sweetest one',
-        artist: 'Aimer',
-        url: 'https://music.163.com/song/media/outer/url?id=29794281.mp3',
-        cover: 'https://p1.music.126.net/Crif0V5UxLI5zYopjwYYnA==/18259589603042434.jpg?param=130y130',
-        lrc: 'lrc.lrc',
-        theme: '#ebd0c2'
-    }];
+        'name': 'my sweetest one',
+        'artist': 'Aimer',
+        'url': 'https://music.163.com/song/media/outer/url?id=29794281.mp3',
+        'cover': 'https://p1.music.126.net/Crif0V5UxLI5zYopjwYYnA==/18259589603042434.jpg?param=130y130',
+        'lrc': 'lrc.lrc',
+        'theme': '#ebd0c2'
+    }
+    ];
