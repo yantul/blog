@@ -43,18 +43,21 @@ jobs:
       
       - name: Pull origin blog project
         run: |
-          mkdir -p ~/workdir
-          cd ~/workdir
+          cd ~/work
           git clone git@github.com:yantul/yantul.github.io.git
           git checkout master
-          # cp -r source/dist/js/* ./yantul.github.io/script/
-          # cp -r source/dist/css/* ./yantul.github.io/style/
-          # cp source/dist/*.css ./yantul.github.io/
+          # cp -r ~/work/blog/blog/dist/js/* ./yantul.github.io/script/
+          # cp -r ~/work/blog/blog/dist/css/* ./yantul.github.io/style/
+          # cp ~/work/blog/blog/dist/*.css ./yantul.github.io/
+          # cp 
+          cp ~/work/blog/blog/dist/index.html ./yantul.github.io/
           echo `pwd`
           
 
       - name: Deploy blog
         run: |
           echo `pwd`
+          git add -A
+          git commit -m "Update Blog Theme."
           
         
