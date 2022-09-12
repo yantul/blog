@@ -50,8 +50,10 @@ jobs:
           # cp -r ~/work/blog/blog/dist/js/* ./yantul.github.io/script/
           # cp -r ~/work/blog/blog/dist/css/* ./yantul.github.io/style/
           # cp ~/work/blog/blog/dist/*.css ./yantul.github.io/
-          # cp 
-          cp ~/work/blog/blog/dist/index.html ./yantul.github.io/
+          # cp
+          echo `ls -al`
+          echo `pwd`
+          cp -f ~/work/blog/blog/dist/index.html ./yantul.github.io/
           
 
       - name: Deploy blog
