@@ -45,6 +45,7 @@ jobs:
         run: |
           cd ~/work
           git clone git@github.com:yantul/yantul.github.io.git
+          cd ./yantul.github.io/
           git checkout master
           # cp -r ~/work/blog/blog/dist/js/* ./yantul.github.io/script/
           # cp -r ~/work/blog/blog/dist/css/* ./yantul.github.io/style/
