@@ -41,7 +41,7 @@ jobs:
           git config --global user.email "cjystyle@163.com"
           git config --global user.name "Avery"
       
-      - name: Pull origin blog project
+      - name: Pull origin blog project and push
         run: |
           cd ~/work
           git clone git@github.com:yantul/yantul.github.io.git
@@ -50,15 +50,7 @@ jobs:
           # cp -r ~/work/blog/blog/dist/js/* ./script/
           # cp -r ~/work/blog/blog/dist/css/* ./style/
           # cp ~/work/blog/blog/dist/*.css ./
-          # cp
-          echo `ls -al`
-          echo `pwd`
           cp -f ~/work/blog/blog/dist/index.html ./
-          
-
-      - name: Deploy blog
-        run: |
-          echo `pwd`
           git add -A
           git commit -m "Update Blog Theme."
           
