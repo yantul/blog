@@ -53,5 +53,5 @@ jobs:
           cp -f ~/work/blog/blog/dist/index.html ./
           git add -A
           git commit -m "Update Blog Theme."
-          
+          git push origin master
         
