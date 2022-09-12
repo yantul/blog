@@ -35,7 +35,7 @@ jobs:
       - name: Setup environment
         run: |
           mkdir -p ~/.ssh/
-          echo ${DEPLOY_POSTS_KEY} > ~/.ssh/id_rsa
+          echo $DEPLOY_POSTS_KEY > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.email "cjystyle@163.com"
