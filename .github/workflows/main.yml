@@ -29,8 +29,6 @@ jobs:
         run: |
           npm install
           npm run build
-          echo `pwd`
-          echo `ls -al`
 
       - name: Setup environment
         run: |
@@ -47,10 +45,8 @@ jobs:
           git clone git@github.com:yantul/yantul.github.io.git
           cd ./yantul.github.io/
           git checkout master
-          # cp -r ~/work/blog/blog/dist/js/* ./script/
-          # cp -r ~/work/blog/blog/dist/css/* ./style/
-          # cp ~/work/blog/blog/dist/*.css ./
-          cp -f ~/work/blog/blog/dist/index.html ./
+          cp -rp ~/work/blog/blog/dist/* ./
+
           git add -A
           git commit -m "Update Blog Theme."
           git push origin master
