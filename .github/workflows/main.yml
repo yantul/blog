@@ -29,7 +29,32 @@ jobs:
         run: |
           npm install
           npm run build
+          echo `pwd`
+          echo `ls -al`
 
-      - name: Publish
+      - name: Setup environment
         run: |
-          echo Publish
+          mkdir -p ~/.ssh/
+          echo "${DEPLOY_POSTS_KEY}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.email "cjystyle@163.com"
+          git config --global user.name "Avery"
+      
+      - name: Pull origin blog project
+        run: |
+          mkdir -p ~/workdir
+          cd ~/workdir
+          git clone git@github.com:yantul/yantul.github.io.git
+          git checkout master
+          # cp -r source/dist/js/* ./yantul.github.io/script/
+          # cp -r source/dist/css/* ./yantul.github.io/style/
+          # cp source/dist/*.css ./yantul.github.io/
+          echo `pwd`
+          
+
+      - name: Deploy blog
+        run: |
+          echo `pwd`
+          
+        
