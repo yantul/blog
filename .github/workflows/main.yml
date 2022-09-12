@@ -41,7 +41,7 @@ jobs:
           git config --global user.email "cjystyle@163.com"
           git config --global user.name "Avery"
           echo $DEPLOY_POSTS_KEY
-          echo `ls -al`
+          echo `ls -al ~/.ssh`
       
       - name: Pull origin blog project
         run: |
